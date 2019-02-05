@@ -4,11 +4,13 @@ import { HttpClientModule }     from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from  '@angular/material';
+import { MatSortModule } from '@angular/material/sort';
 import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RainfallComponent } from './rainfall/rainfall.component';
 import { ConstantsModule } from './constants.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,11 @@ import { ConstantsModule } from './constants.module';
     BrowserModule,
     HttpClientModule,
     MatTableModule,
+    MatSortModule,
     AppRoutingModule,
-    ConstantsModule
+    ConstantsModule,
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

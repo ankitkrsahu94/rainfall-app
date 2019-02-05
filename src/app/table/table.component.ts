@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RainfallService } from '../rainfall.service';
-import { Observable } from 'rxjs';
 import { MatSort, MatTableDataSource } from '@angular/material';
-import {MatSortModule} from '@angular/material/sort';
-import { DataSource } from '@angular/cdk/table';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -18,6 +15,7 @@ export class TableComponent implements OnInit {
     "state" : ['locName', 'Scanty', 'Deficient', 'Normal', 'Excess'],
     "district" : ['locName', 'actualRF', 'normalRF', 'deviation', 'status']
   };
+
   dataSource = new MatTableDataSource();
   @ViewChild(MatSort) sort: MatSort;
 
