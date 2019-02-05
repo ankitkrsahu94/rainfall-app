@@ -2,19 +2,27 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { ConstantsModule } from './constants.module';
+// import { API_URL } from './constants.module';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class RainfallService {
-  rainfallUrl = "http://34.217.79.156:8080/api/maindashboard/rainfall/normal";
-  
-  constructor(private http: HttpClient) { }
+  districtLevelSummaryUrl = this.constants.API_URL + "rainfall/mandaldeviation";
+  mandalLevelDeviationUrl = this.constants.API_URL + "rainfall/districtsummary";
+  constructor(private constants: ConstantsModule, private http: HttpClient) { }
  
-  getTableData(): Observable<any>{
-    return this.http.get<any>(this.rainfallUrl).pipe(
-      catchError(this.handleError('getHeroes', []))
+  getDistrictLevelSummary(): Observable<any>{
+    return this.http.get<any>(this.districtLevelSummaryUrl).pipe(
+      catchError(this.handleError('District Level Summary', []))
+    );
+  }
+
+  getAllMandalDeviationForDistrict(district: String): Observable<any>{
+    return this.http.get<any>(this.mandalLevelDeviationUrl+"/"+district).pipe(
+      catchError(this.handleError('All Mandals data for District : ' + district, []))
     );
   }
 
