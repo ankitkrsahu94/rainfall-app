@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as maptalks from 'maptalks'
+import * as maptalks from 'maptalks';
 
 @Injectable({
   providedIn: 'root'

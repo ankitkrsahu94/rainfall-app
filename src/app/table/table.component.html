@@ -1,77 +1,75 @@
-<div>
-  <div *ngIf="dataSource && view === 'state'">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<div class="fixed-height" *ngIf="dataSource && view === 'state'">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="locName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Location Name </th>
-        <td mat-cell *matCellDef="let element" (click)="navigateToLocation('district', element.locName)" [class.anchor]="true">{{element.locName}}</td>
-      </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="locName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Location Name </th>
+      <td mat-cell *matCellDef="let element" (click)="navigateToLocation('district', element.locName)" [class.anchor]="true">{{element.locName}}</td>
+    </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="Scanty">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Scanty </th>
-        <td mat-cell *matCellDef="let element"> {{element.Scanty}} </td>
-      </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="Scanty">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Scanty </th>
+      <td mat-cell *matCellDef="let element"> {{element.Scanty}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="Deficient">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Deficient </th>
-        <td mat-cell *matCellDef="let element"> {{element.Deficient}} </td>
-      </ng-container>
+    <ng-container matColumnDef="Deficient">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Deficient </th>
+      <td mat-cell *matCellDef="let element"> {{element.Deficient}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="Normal">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Normal </th>
-        <td mat-cell *matCellDef="let element"> {{element.Normal}} </td>
-      </ng-container>
+    <ng-container matColumnDef="Normal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Normal </th>
+      <td mat-cell *matCellDef="let element"> {{element.Normal}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="Excess">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Excess </th>
-        <td mat-cell *matCellDef="let element"> {{element.Excess}} </td>
-      </ng-container>
+    <ng-container matColumnDef="Excess">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Excess </th>
+      <td mat-cell *matCellDef="let element"> {{element.Excess}} </td>
+    </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns[view]"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns[view];"></tr>
-    </table>
-  </div>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns[view]; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns[view];"></tr>
+  </table>
+</div>
 
-  <div *ngIf="dataSource && view === 'district'">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<div class="fixed-height" *ngIf="dataSource && view === 'district'">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="locName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Location Name </th>
-        <td mat-cell *matCellDef="let element">{{element.locName}}</td>
-      </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="locName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Location Name </th>
+      <td mat-cell *matCellDef="let element">{{element.locName}}</td>
+    </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="actualRF">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Actual RF </th>
-        <td mat-cell *matCellDef="let element"> {{element.actualRF}} </td>
-      </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="actualRF">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actual RF </th>
+      <td mat-cell *matCellDef="let element"> {{element.actualRF}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="normalRF">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Normal RF </th>
-        <td mat-cell *matCellDef="let element"> {{element.normalRF}} </td>
-      </ng-container>
+    <ng-container matColumnDef="normalRF">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Normal RF </th>
+      <td mat-cell *matCellDef="let element"> {{element.normalRF}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="deviation">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Deviation </th>
-        <td mat-cell *matCellDef="let element"> {{element.deviation}} </td>
-      </ng-container>
+    <ng-container matColumnDef="deviation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Deviation </th>
+      <td mat-cell *matCellDef="let element"> {{element.deviation}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-      </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns[view]"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns[view];"></tr>
-    </table>
-  </div>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns[view];sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns[view];"></tr>
+  </table>
 </div>

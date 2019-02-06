@@ -12,6 +12,7 @@ import { ConstantsModule } from './constants.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MapComponent } from './map/map.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MapComponent } from './map/map.component';
     TableComponent,
     PagenotfoundComponent,
     RainfallComponent,
-    MapComponent
+    MapComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,10 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+.fixed-height {
+    height: 800px;
+    overflow: auto;
+}
+
 table {
     width: 100%;
 }
