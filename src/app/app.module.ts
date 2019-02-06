@@ -11,13 +11,15 @@ import { RainfallComponent } from './rainfall/rainfall.component';
 import { ConstantsModule } from './constants.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     PagenotfoundComponent,
-    RainfallComponent
+    RainfallComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
