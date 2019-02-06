@@ -8,5 +8,6 @@ import { CommonModule } from '@angular/common';
 
 
 export class ConstantsModule { 
-  API_URL = "http://34.217.79.156:8080/api/";  
+  API_URL = 'http://34.217.79.156:8080/api/';  
+  LOCATION_TYPES = ['country','state', 'district', 'mandal', 'block', 'village'];
 }

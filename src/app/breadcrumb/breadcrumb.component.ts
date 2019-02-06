@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { ConstantsModule } from '../constants.module';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'breadcrumb',
@@ -8,20 +10,28 @@ import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd, Navigati
 })
 
 export class BreadcrumbComponent implements OnInit {
-  uiStateList : string[];
+  uiStateList : Object[] = [{"locType":"State", "name" : "Andhra Pradesh"}];
   
   updateLocationList(): void{
-    let urlPath = this.route.snapshot.routeConfig.path;
     let urlParams = this.route.snapshot.params;
     let bCrumbList = [];
     if(Object.keys(urlParams).length > 0){
       for(let param in urlParams){
-        
+        if(this.constants.LOCATION_TYPES.indexOf(param.toLowerCase()) >= 0){
+          bCrumbList.push({'locType': param, 'name': urlParams[param]});
+        }
       }
     }
+    this.uiStateList = bCrumbList;
   }
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  bringViewToPosition(elem: Object): void{
+    let urlPath = "/" + this.route.snapshot.routeConfig.path;
+    let urlParams ;
+    this.router.navigate([urlPath, urlParams]);
+  }
+
+  constructor(private constants: ConstantsModule, private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
