@@ -8,8 +8,6 @@ import { RainfallComponent } from './rainfall/rainfall.component';
 const routes: Routes = [
   { path: '', redirectTo: '/rainfall/Andhra Pradesh', pathMatch: 'full' },
   { path: 'rainfall', component: RainfallComponent },
-  { path: 'rainfall/:state', component: RainfallComponent },
-  { path: 'rainfall/:state/:district', component: RainfallComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

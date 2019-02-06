@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as maptalks from 'maptalks'
+import * as maptalks from 'maptalks';
 
 import {FullscreenService} from '../fullscreen.service';
 import { ActivatedRoute } from '@angular/router';
