@@ -1,3 +1,3 @@
 <p>
-  <span class="ml-10" *ngFor="let element of uiStateList">{{element.locType}} : {{element.name}}</span>
+  <span class="ml-10" *ngFor="let element of uiStateList">{{element.locType}} : <span (click)="updateView(element)" [class.anchor]="true">{{element.name}}</span></span>
 </p>

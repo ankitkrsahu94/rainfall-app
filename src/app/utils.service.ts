@@ -7,6 +7,7 @@ export class UtilsService {
   constructor(private route: ActivatedRoute) { }
 
   getURLParams(): Object{
-    return this.route.snapshot.params;
+    let urlParams = this.route.snapshot.params;
+    return Object.assign({selected: false}, urlParams);
   }
 }

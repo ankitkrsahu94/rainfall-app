@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { RainfallService } from '../rainfall.service';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { ConstantsModule } from '../constants.module';
 
 @Component({
   selector: 'rf-table',
@@ -31,9 +32,16 @@ export class TableComponent implements OnInit {
   } 
 
   loadCurrentState() : void{
-    this.stateName = this.route.snapshot.paramMap.get('state');
-    this.districtName = this.route.snapshot.paramMap.get('district');
-    this.getTableData();
+    let state = this.route.snapshot.paramMap.get('state');
+
+    if(!state){
+      this.router.navigate(["/rainfall",{country: this.constants.DEFAULT_COUNTRY, state: this.constants.DEFAULT_STATE}]);
+    }
+    else{
+      this.stateName = this.route.snapshot.paramMap.get('state');
+      this.districtName = this.route.snapshot.paramMap.get('district');
+      this.getTableData();
+    }
   }
   getTableData(): void{
     if(this.districtName == null){
@@ -77,7 +85,7 @@ export class TableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
  
-  constructor(private route: ActivatedRoute, private rfService: RainfallService, private router: Router) {
+  constructor(private constants: ConstantsModule, private route: ActivatedRoute, private rfService: RainfallService, private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
