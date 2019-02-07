@@ -13,8 +13,8 @@ import { ConstantsModule } from '../constants.module';
 export class TableComponent implements OnInit {
   //To use angular material table.
   displayedColumns = {
-    "state" : ['locName', 'Scanty', 'Deficient', 'Normal', 'Excess'],
-    "district" : ['locName', 'actualRF', 'normalRF', 'deviation', 'status']
+    "state" : ['locName', 'Scanty', 'Deficient', 'Normal', 'Excess', "Dummy Col 1", "Dummy Col 2", "Dummy Col 3"],
+    "district" : ['locName', 'actualRF', 'normalRF', 'deviation', 'status', "Dummy Col 1", "Dummy Col 2", "Dummy Col 3"]
   };
 
   locationHierarchy = ["district", "mandal", "village"];

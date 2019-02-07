@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }     from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
-import { MatTableModule } from  '@angular/material';
+import { MatTableModule, MatCardModule } from  '@angular/material';
 import { MatSortModule } from '@angular/material/sort';
 import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -31,7 +31,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     AppRoutingModule,
     ConstantsModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
