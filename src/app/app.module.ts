@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MapComponent } from './map/map.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { MisComponent } from './waterdataonline/mis/mis.component';
+import { GisComponent } from './waterdataonline/gis/gis.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,10 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     TableComponent,
     PagenotfoundComponent,
     RainfallComponent,
+    BreadcrumbComponent,
+    MisComponent,
     MapComponent,
-    BreadcrumbComponent
+    GisComponent
   ],
   imports: [
     BrowserModule,
