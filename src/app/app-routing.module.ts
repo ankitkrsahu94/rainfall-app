@@ -7,6 +7,7 @@ import { GisComponent } from './waterdataonline/gis/gis.component';
 const routes: Routes = [
   { path: '', redirectTo: '/rainfall', pathMatch: 'full' },
   { path: 'rainfall', component: RainfallComponent },
+  { path: 'waterdataonline/gis/:parentLocName', component: GisComponent},
   { path: 'waterdataonline/gis', component: GisComponent},
   { path: '**', component: PagenotfoundComponent }
 ];

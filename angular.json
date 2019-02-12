@@ -28,7 +28,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/maptalks/dist/maptalks.js"
+              "node_modules/maptalks/dist/maptalks.js",
+              "node_modules/maptalks.esri/dist/maptalks.esri.js"
             ],
             "es5BrowserSupport": true
           },
